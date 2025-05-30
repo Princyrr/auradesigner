@@ -79,14 +79,14 @@ export default function Services() {
                   }`}
                 >
                   {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-0 left-0 right-0">
+                      <div className="bg-primary text-white text-center py-2 text-sm font-semibold rounded-t-lg">
                         Mais Popular
-                      </span>
+                      </div>
                     </div>
                   )}
 
-                  <CardContent className="p-8 text-center">
+                  <CardContent className={`text-center ${pkg.popular ? "pt-12 pb-8 px-8" : "p-8"}`}>
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                       <IconComponent className="text-2xl text-primary" size={32} />
                     </div>
