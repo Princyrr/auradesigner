@@ -11,12 +11,21 @@ export function scrollToSection(sectionId: string) {
     const offsetTop = element.offsetTop - 80; // Account for fixed header
     window.scrollTo({
       top: offsetTop,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
 }
 
-export function createWhatsAppUrl(message: string, phone = "5511999999999") {
+/**
+ * Cria URL para abrir o WhatsApp com mensagem e telefone pré-definidos.
+ * @param message Mensagem para enviar pelo WhatsApp
+ * @param phone Número de telefone no formato internacional, sem "+" e sem espaços (ex: "351926404488")
+ * @returns URL completa para WhatsApp Web / app
+ */
+export function createWhatsAppUrl(
+  message: string,
+  phone = "351926404488"
+): string {
   const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${phone}?text=${encodedMessage}`;
 }

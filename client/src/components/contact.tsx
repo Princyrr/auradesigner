@@ -1,11 +1,12 @@
 import { Clock, Reply, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { createWhatsAppUrl } from "@/lib/utils";
 
 export default function Contact() {
   const handleWhatsAppContact = () => {
+    const phoneNumber = "351926404488"; // número em formato internacional, sem "+"
     const message = "Olá! Gostaria de saber mais sobre seus serviços.";
-    window.open(createWhatsAppUrl(message), "_blank");
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   };
 
   return (
